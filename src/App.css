@@ -37,6 +37,10 @@ body {
   color: rgb(107, 107, 216);
 }
 
+.site-title a {
+  text-decoration: none;
+}
+
 .navbar {
   width: 30%;
   margin-top: 20px;
