@@ -4,7 +4,7 @@ const Header = () => (
   <div className="header">
     <div className="site-title">
       <h1>
-        Bookstore CMS
+        <Link to="/">Bookstore CMS</Link>
       </h1>
     </div>
     <nav className="navbar">
