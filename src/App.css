@@ -120,6 +120,11 @@ body {
   margin-right: 10px;
   padding-right: 10px;
   border-right: 2px solid #a7a3a3;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  color:  rgb(18, 18, 216);
 }
 
 .update-progress button {
