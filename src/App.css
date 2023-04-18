@@ -107,6 +107,16 @@ body {
   font-size: 15px;
 }
 
+.update-progress button {
+  border: none;
+  background-color: #7565ce;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  padding: 7px 9px;
+  border-radius: 3px;
+}
+
 .actions {
   margin-top: 25px;
 }
@@ -121,20 +131,6 @@ body {
   padding-right: 10px;
   border-right: 2px solid #a7a3a3;
   cursor: pointer;
-}
-
-.actions button:hover {
-  color:  rgb(18, 18, 216);
-}
-
-.update-progress button {
-  border: none;
-  background-color: #7565ce;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  padding: 7px 9px;
-  border-radius: 3px;
 }
 
 .add-book button {
@@ -161,6 +157,10 @@ body {
   border-radius: 3px;
   margin-top: 35px;
   margin-right: 40px;
+}
+
+.actions button:hover {
+  color: rgb(18, 18, 216);
 }
 
 .actions button:last-child {
