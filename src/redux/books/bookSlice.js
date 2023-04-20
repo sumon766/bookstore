@@ -21,12 +21,8 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
 
 export const removeBook = createAsyncThunk('books/removeBook', async (id) => {
   try {
-    const response = await axios.delete(`${apiUrl}/${id}`);
-    const remainingBooks = response.data;
-    await Promise.all(
-      remainingBooks.map((book, i) => axios.put(`${apiUrl}/${book.item_id}`, { item_id: `item${i + 1}` })),
-    );
-    return response;
+    await axios.delete(`${apiUrl}/${id}`);
+    return id;
   } catch (error) {
     return error;
   }
@@ -53,6 +49,9 @@ const bookSlice = createSlice({
         category: action.payload.category,
       };
       state.books.push(book);
+    },
+    removeBook: (state, action) => {
+      state.books = state.books.filter((book) => book.item_id !== action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -84,7 +83,6 @@ const bookSlice = createSlice({
     builder.addCase(postBook.fulfilled, (state) => {
       const newState = state;
       newState.error = false;
-      window.location.reload();
     });
     builder.addCase(postBook.rejected, (state) => {
       const newState = state;
@@ -94,10 +92,10 @@ const bookSlice = createSlice({
       const newState = state;
       newState.success = false;
     });
-    builder.addCase(removeBook.fulfilled, (state) => {
+    builder.addCase(removeBook.fulfilled, (state, action) => {
       const newState = state;
       newState.success = true;
-      window.location.reload();
+      newState.books = newState.books.filter((book) => book.item_id !== action.payload);
     });
     builder.addCase(removeBook.rejected, (state) => {
       const newState = state;

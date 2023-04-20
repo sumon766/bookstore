@@ -13,6 +13,12 @@ const Book = () => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
+  const handleRemoveBook = (id) => {
+    dispatch(removeBook(id));
+    const newBooks = books.filter((book) => book.item_id !== id);
+    dispatch({ type: 'books/setBooks', payload: newBooks });
+  };
+
   if (isLoading) {
     return <h3>Data is loading...</h3>;
   }
@@ -34,7 +40,7 @@ const Book = () => {
               <button type="button">Edit</button>
               <button
                 type="button"
-                onClick={() => dispatch(removeBook(book.item_id))}
+                onClick={() => handleRemoveBook(book.item_id)}
               >
                 Remove
               </button>
