@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchBooks, removeBook } from "../redux/books/bookSlice";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchBooks, removeBook } from '../redux/books/bookSlice';
 
 const Book = () => {
   const dispatch = useDispatch();
-  const { books, isLoading, error, success } = useSelector(
-    (state) => state.book
+  const {
+    books, isLoading, error,
+  } = useSelector(
+    (state) => state.book,
   );
   useEffect(() => {
     dispatch(fetchBooks());
@@ -22,7 +24,7 @@ const Book = () => {
   return (
     <div>
       {books.map((book) => (
-        
+
         <div className="book" key={book.item_id}>
           <div className="book-details">
             <h2>{book.title}</h2>
@@ -56,4 +58,3 @@ const Book = () => {
 };
 
 export default Book;
-

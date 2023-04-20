@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { nanoid } from 'nanoid';
 import store from '../redux/store';
 import { postBook } from '../redux/books/bookSlice';
-import { nanoid } from 'nanoid';
 
 const Form = () => {
   const [newBook, setNewBook] = useState({
@@ -12,7 +12,6 @@ const Form = () => {
 
   const handleAddBook = async (event) => {
     event.preventDefault();
-    const { books } = store.getState().book;
     const id = nanoid();
     const title = document.getElementById('book-name').value;
     const author = document.getElementById('author-name').value;
@@ -29,6 +28,7 @@ const Form = () => {
     } catch (error) {
       return error;
     }
+    return Promise.resolve();
   };
 
   return (
