@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import store from '../redux/store';
-import { postBook } from '../redux/books/bookSlice';
+import { addBook, postBook } from '../redux/books/bookSlice';
 
 const Form = () => {
   const [newBook, setNewBook] = useState({
@@ -24,6 +24,7 @@ const Form = () => {
     };
     try {
       await store.dispatch(postBook(book));
+      store.dispatch(addBook(book));
       setNewBook({ title: '', author: '', category: '' });
     } catch (error) {
       return error;

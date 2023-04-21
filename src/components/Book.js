@@ -28,7 +28,9 @@ const Book = () => {
   }
 
   return (
-    <div>
+    <div className="book-list">
+      {isLoading && <div>Loading...</div>}
+      {error && <div>Error loading books.</div>}
       {books.map((book) => (
 
         <div className="book" key={book.item_id}>

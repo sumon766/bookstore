@@ -48,19 +48,22 @@ const bookSlice = createSlice({
         author: action.payload.author,
         category: action.payload.category,
       };
-      state.books.push(book);
+      return {
+        ...state,
+        books: [...state.books, book],
+      };
     },
-    removeBook: (state, action) => {
-      state.books = state.books.filter((book) => book.item_id !== action.payload);
-    },
+    removeBook: (state, action) => ({
+      ...state,
+      books: state.books.filter((book) => book.item_id !== action.payload),
+    }),
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchBooks.pending, (state) => {
-      const newState = state;
-      newState.isLoading = true;
-    });
+    builder.addCase(fetchBooks.pending, (state) => ({
+      ...state,
+      isLoading: true,
+    }));
     builder.addCase(fetchBooks.fulfilled, (state, action) => {
-      const newState = state;
       const books = action.payload;
       const newBooks = Object.keys(books).map((key) => ({
         item_id: key,
@@ -68,39 +71,43 @@ const bookSlice = createSlice({
         author: books[key][0].author,
         category: books[key][0].category,
       }));
-      newState.books = newBooks;
-      newState.isLoading = false;
+      return {
+        ...state,
+        books: newBooks,
+        isLoading: false,
+      };
     });
-    builder.addCase(fetchBooks.rejected, (state) => {
-      const newState = state;
-      newState.isLoading = false;
-      newState.error = true;
-    });
-    builder.addCase(postBook.pending, (state) => {
-      const newState = state;
-      newState.error = false;
-    });
-    builder.addCase(postBook.fulfilled, (state) => {
-      const newState = state;
-      newState.error = false;
-    });
-    builder.addCase(postBook.rejected, (state) => {
-      const newState = state;
-      newState.error = true;
-    });
-    builder.addCase(removeBook.pending, (state) => {
-      const newState = state;
-      newState.success = false;
-    });
-    builder.addCase(removeBook.fulfilled, (state, action) => {
-      const newState = state;
-      newState.success = true;
-      newState.books = newState.books.filter((book) => book.item_id !== action.payload);
-    });
-    builder.addCase(removeBook.rejected, (state) => {
-      const newState = state;
-      newState.success = false;
-    });
+    builder.addCase(fetchBooks.rejected, (state) => ({
+      ...state,
+      isLoading: false,
+      error: true,
+    }));
+    builder.addCase(postBook.pending, (state) => ({
+      ...state,
+      error: false,
+    }));
+    builder.addCase(postBook.fulfilled, (state) => ({
+      ...state,
+      error: false,
+      success: true,
+    }));
+    builder.addCase(postBook.rejected, (state) => ({
+      ...state,
+      error: true,
+    }));
+    builder.addCase(removeBook.pending, (state) => ({
+      ...state,
+      success: false,
+    }));
+    builder.addCase(removeBook.fulfilled, (state, action) => ({
+      ...state,
+      success: true,
+      books: state.books.filter((book) => book.item_id !== action.payload),
+    }));
+    builder.addCase(removeBook.rejected, (state) => ({
+      ...state,
+      success: false,
+    }));
   },
 });
 
