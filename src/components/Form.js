@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { nanoid } from 'nanoid';
 import store from '../redux/store';
-import { addBook } from '../redux/books/bookSlice';
+import { addBook, postBook } from '../redux/books/bookSlice';
 
 const Form = () => {
   const [newBook, setNewBook] = useState({
@@ -9,17 +10,26 @@ const Form = () => {
     category: '',
   });
 
-  const handleAddBook = (event) => {
+  const handleAddBook = async (event) => {
     event.preventDefault();
-    const { books } = store.getState().book;
-    const id = `item${books.length + 1}`;
+    const id = nanoid();
     const title = document.getElementById('book-name').value;
     const author = document.getElementById('author-name').value;
     const category = 'Drama';
-    store.dispatch(addBook({
-      id, title, author, category,
-    }));
-    setNewBook({ title: '', author: '', category: '' });
+    const book = {
+      item_id: id,
+      title,
+      author,
+      category,
+    };
+    try {
+      await store.dispatch(postBook(book));
+      store.dispatch(addBook(book));
+      setNewBook({ title: '', author: '', category: '' });
+    } catch (error) {
+      return error;
+    }
+    return Promise.resolve();
   };
 
   return (
