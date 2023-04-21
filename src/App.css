@@ -111,7 +111,7 @@ body {
   border: none;
   background-color: #7565ce;
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Anuphan', sans-serif;
   font-size: 16px;
   padding: 7px 9px;
   border-radius: 3px;
@@ -137,7 +137,7 @@ body {
   width: 13%;
   border: none;
   background-color: #211372;
-  font-family: 'Anuphan', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: #fff;
   padding: 10px 17px;
@@ -179,7 +179,7 @@ body {
 }
 
 .progress span {
-  font-family: 'Anuphan', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 15px;
 }
 
