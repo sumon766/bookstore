@@ -1,19 +1,19 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => (
   <div className="header">
     <div className="site-title">
       <h1>
-        <Link to="/">Bookstore CMS</Link>
+        <NavLink to="/">Bookstore CMS</NavLink>
       </h1>
     </div>
     <nav className="navbar">
       <ul>
         <li>
-          <Link to="/">Books</Link>
+          <NavLink activeClassName="is-active" to="/">Books</NavLink>
         </li>
         <li>
-          <Link to="/categories">Categories</Link>
+          <NavLink activeClassName="is-active" to="/categories">Categories</NavLink>
         </li>
       </ul>
     </nav>

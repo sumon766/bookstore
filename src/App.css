@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Mukta:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
@@ -33,12 +33,12 @@ body {
   width: 40%;
   justify-content: space-between;
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  color: rgb(107, 107, 216);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .site-title a {
   text-decoration: none;
+  color: rgb(32, 136, 255);
 }
 
 .navbar {
@@ -56,9 +56,14 @@ body {
 
 .navbar ul li a {
   text-decoration: none;
-  font-family: 'Anuphan', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   padding: 10px 12px;
+  color: #837e7e;
+}
+
+.active {
+  color: #161616 !important;
 }
 
 .user-panel {
@@ -88,22 +93,29 @@ body {
 }
 
 .book-details {
-  width: 50%;
-  font-family: 'Mukta', sans-serif;
+  width: 40%;
+  font-family: 'Roboto Slab', sans-serif;
   display: flex;
   flex-direction: column;
 }
 
+.book-details h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #584e4e;
+}
+
 .book-details h2 {
-  font-family: 'Inter', sans-serif;
-  color: rgb(124, 94, 172);
+  font-family: 'Roboto Slab', sans-serif;
+  color: rgb(22, 21, 24);
   font-size: 20px;
   margin-bottom: 10px;
 }
 
 .book-details p {
-  font-family: 'Inter', sans-serif;
-  color: rgb(98, 87, 117);
+  font-family: 'Roboto Slab', sans-serif;
+  color: rgb(112, 108, 117);
   font-size: 15px;
 }
 
@@ -111,7 +123,7 @@ body {
   border: none;
   background-color: #7565ce;
   color: #fff;
-  font-family: 'Anuphan', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 16px;
   padding: 7px 9px;
   border-radius: 3px;
@@ -124,7 +136,7 @@ body {
 .actions button {
   background-color: #fff;
   border: none;
-  font-family: 'Anuphan', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 15px;
   color: rgb(27, 27, 37);
   margin-right: 10px;
@@ -137,7 +149,7 @@ body {
   width: 13%;
   border: none;
   background-color: #211372;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 16px;
   color: #fff;
   padding: 10px 17px;
@@ -145,11 +157,18 @@ body {
   border-radius: 3px;
 }
 
+.add-book h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
 .categories button {
   width: 13%;
   border: none;
   background-color: #211372;
-  font-family: 'Anuphan', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #fff;
   padding: 10px 17px;
@@ -170,17 +189,32 @@ body {
 }
 
 .progress {
-  width: 15%;
+  width: 25%;
   display: flex;
-  font-family: 'Anuphan', sans-serif;
-  font-size: 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
   color: #7565ce;
-  line-height: 30px;
+}
+
+.progress h1 {
+  margin-top: 12px;
+  line-height: 20px;
 }
 
 .progress span {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
+}
+
+.ProgressOvalDiv {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.ProgressOval {
+  width: 50% !important;
 }
 
 .update-progress {
@@ -191,14 +225,14 @@ body {
 }
 
 .update-progress h4 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   color: rgb(129, 127, 134);
   font-size: 15px;
 }
 
 .update-progress h3 {
-  font-family: 'Inter', sans-serif;
-  color: rgb(174, 140, 243);
+  font-family: 'Roboto Slab', sans-serif;
+  color: rgb(45, 37, 61);
   font-size: 18px;
   margin: 15px 0;
 }
@@ -212,7 +246,7 @@ body {
   border: none;
   padding: 10px;
   border-radius: 2px;
-  font-family: 'Anuphan', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 16px;
   color: #1c1b1d;
   margin-right: 15px;
@@ -223,14 +257,14 @@ body {
   display: flex;
   background-color: rgb(241, 236, 236);
   padding: 3% 4%;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 30px;
   font-weight: 700;
   color: #1c1b1d;
 }
 
 .categories h2 {
-  font-family: 'Anuphan', sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 35px;
   color: #201e1e;
 }
