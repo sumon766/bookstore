@@ -34,6 +34,7 @@ const Form = () => {
 
   return (
     <div className="add-book">
+      <h2>Add New Book</h2>
       <form onSubmit={handleAddBook} className="form">
         <input
           type="text"

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import { fetchBooks, removeBook } from '../redux/books/bookSlice';
+import 'react-circular-progressbar/dist/styles.css';
 
 const Book = () => {
   const dispatch = useDispatch();
@@ -35,6 +37,7 @@ const Book = () => {
 
         <div className="book" key={book.item_id}>
           <div className="book-details">
+            <h3>Drama</h3>
             <h2>{book.title}</h2>
             <p>{book.author}</p>
             <div className="actions">
@@ -49,8 +52,13 @@ const Book = () => {
             </div>
           </div>
           <div className="progress">
+            <div className="ProgressOvalDiv ">
+              <CircularProgressbar className="ProgressOval" value={64} />
+            </div>
             <h1>
               64%
+              {' '}
+              <br />
               <span>Completed</span>
             </h1>
           </div>

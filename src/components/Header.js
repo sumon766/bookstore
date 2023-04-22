@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => (
-  <div className="header">
+  <div className="header sticky">
     <div className="site-title">
       <h1>
         <Link to="/">Bookstore CMS</Link>
@@ -10,10 +10,10 @@ const Header = () => (
     <nav className="navbar">
       <ul>
         <li>
-          <Link to="/">Books</Link>
+          <NavLink activeClassName="is-active" to="/">Books</NavLink>
         </li>
         <li>
-          <Link to="/categories">Categories</Link>
+          <NavLink activeClassName="is-active" to="/categories">Categories</NavLink>
         </li>
       </ul>
     </nav>
@@ -24,5 +24,4 @@ const Header = () => (
     </div>
   </div>
 );
-
 export default Header;
