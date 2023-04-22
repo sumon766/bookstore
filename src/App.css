@@ -28,6 +28,13 @@ body {
   padding: 3% 4%;
 }
 
+.sticky {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
 .site-title {
   display: flex;
   width: 40%;
@@ -36,9 +43,9 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.site-title a {
+.site-title h1 > a {
   text-decoration: none;
-  color: rgb(32, 136, 255);
+  color: #0290ff;
 }
 
 .navbar {
@@ -94,39 +101,43 @@ body {
 
 .book-details {
   width: 40%;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', serif;
   display: flex;
   flex-direction: column;
 }
 
 .book-details h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', serif;
   font-size: 14px;
   margin-bottom: 5px;
-  color: #584e4e;
+  color: #121212;
+  opacity: 0.5;
 }
 
 .book-details h2 {
-  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
   color: rgb(22, 21, 24);
-  font-size: 20px;
   margin-bottom: 10px;
 }
 
 .book-details p {
-  font-family: 'Roboto Slab', sans-serif;
-  color: rgb(112, 108, 117);
+  font-family: 'Roboto Slab', serif;
   font-size: 15px;
+  color: #4386bf;
 }
 
 .update-progress button {
   border: none;
-  background-color: #7565ce;
+  background-color: #0290ff;
   color: #fff;
-  font-family: 'Roboto Slab', sans-serif;
-  font-size: 16px;
-  padding: 7px 9px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  padding: 7px 12px;
   border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .actions {
@@ -136,9 +147,9 @@ body {
 .actions button {
   background-color: #fff;
   border: none;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 15px;
-  color: rgb(27, 27, 37);
+  color: #4386bf;
   margin-right: 10px;
   padding-right: 10px;
   border-right: 2px solid #a7a3a3;
@@ -149,7 +160,7 @@ body {
   width: 13%;
   border: none;
   background-color: #211372;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 16px;
   color: #fff;
   padding: 10px 17px;
@@ -199,11 +210,16 @@ body {
 .progress h1 {
   margin-top: 12px;
   line-height: 20px;
+  color: #121212;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
 }
 
 .progress span {
   font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
+  opacity: 0.5;
+  font-size: 0.875rem;
 }
 
 .ProgressOvalDiv {
@@ -225,13 +241,14 @@ body {
 }
 
 .update-progress h4 {
-  font-family: 'Roboto Slab', sans-serif;
-  color: rgb(129, 127, 134);
-  font-size: 15px;
+  font-family: 'Roboto Slab', serif;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  color: #121212;
 }
 
 .update-progress h3 {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', serif;
   color: rgb(45, 37, 61);
   font-size: 18px;
   margin: 15px 0;
@@ -246,7 +263,7 @@ body {
   border: none;
   padding: 10px;
   border-radius: 2px;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 16px;
   color: #1c1b1d;
   margin-right: 15px;
@@ -257,14 +274,14 @@ body {
   display: flex;
   background-color: rgb(241, 236, 236);
   padding: 3% 4%;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 30px;
   font-weight: 700;
   color: #1c1b1d;
 }
 
 .categories h2 {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-size: 35px;
   color: #201e1e;
 }

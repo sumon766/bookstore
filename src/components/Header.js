@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => (
-  <div className="header">
+  <div className="header sticky">
     <div className="site-title">
       <h1>
-        <NavLink to="/">Bookstore CMS</NavLink>
+        <Link to="/">Bookstore CMS</Link>
       </h1>
     </div>
     <nav className="navbar">
@@ -24,5 +24,4 @@ const Header = () => (
     </div>
   </div>
 );
-
 export default Header;
